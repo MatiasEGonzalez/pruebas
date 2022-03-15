@@ -108,6 +108,7 @@ function renderizarCarrito() {
     carritoSinDuplicados.forEach((item) => {
         // Obtenemos el item que necesitamos de la variable base de datos
         const miItem = listaProductos.filter((itemBaseDatos) => {
+            
             // ¿Coincide las id? Solo puede existir un caso
             return itemBaseDatos.id === parseInt(item);
         });
@@ -115,10 +116,12 @@ function renderizarCarrito() {
         const numeroUnidadesItem = carrito.reduce((total, itemId) => {
             // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
             return itemId === item ? total += 1 : total;
+            
         }, 0);
         // Creamos el nodo del item del carrito
         const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+        
         miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
         
         // Boton de borra
