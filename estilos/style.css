@@ -1,0 +1,57 @@
+body{
+    position: absolute;
+    background-color: white;
+    
+}
+
+header{
+    background: black;
+    height: 150px;
+}
+
+
+.letras{
+    color: lightyellow;
+    text-align: center;
+}
+
+.card{
+    flex-grow: 1;
+    margin: 20px;
+    max-width: 300px;
+    border: 2px solid #333;
+    padding: 10px 20px 10px 20px;
+    justify-content: center;
+    background: lightyellow !important; 
+    
+}
+.card:hover{
+    border-color: red;
+    box-shadow: 0px 0px 30px rgb(90, 6, 6);
+   
+    
+}
+
+#items{
+    justify-content: center;
+}
+
+.ordenar{
+    z-index: 99;
+    
+    
+}
+
+
+img{
+    width: 250px;
+    height: 200px;
+    
+}
+
+.menuCatalogo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}

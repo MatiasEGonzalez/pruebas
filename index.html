@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segunda Entrega</title>
+    <link rel="stylesheet" href="estilos/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+    
+</head>
+<body>
+    <header>
+        <h1 class="letras">Bienvenidos al Bar AcaCcomeRico</h1>
+        <h2 class="letras">Bar&growler</h2>
+        <h3 class="letras">Menu</h3>
+    </header>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <!-- Elementos generados a partir de JS -->
+            <main id="items" class="col-sm-8 row">
+                
+            </main>
+            <!-- Carrito -->
+            <aside class="col-sm-4">
+                <h2>Carrito</h2>
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                <!-- Precio total -->
+                <p class="text-right">Total: <span id="total"></span></p>
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+            </aside>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src='js/segundaEntrega.js'></script>
+
+</body>
+</html>
+
