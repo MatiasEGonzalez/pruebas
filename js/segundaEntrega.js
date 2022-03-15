@@ -53,32 +53,31 @@ listaProductos.push(new Lista(16, "Sprite", 170, categorias[3], "./img/sprite.jp
 
 function renderizarProductos() {
     listaProductos.forEach((producto) => {
-        // Estructura
+        
         const miNodo = document.createElement('div');
         miNodo.classList.add('card', 'col-sm-4');
-        // Body
+        
         const miNodoCardBody = document.createElement('div');
         miNodoCardBody.classList.add('card-body');
-        // Titulo
+        
         const miNodoTitle = document.createElement('h5');
-        miNodoTitle.classList.add('card-title');
+        miNodoTitle.classList.add('card-title');       
         miNodoTitle.textContent = `${producto.nombre}`;
-        // Precio
+        
         const miNodoPrecio = document.createElement('p');
-        miNodoPrecio.classList.add('card-text');
+        miNodoPrecio.classList.add('card-text');        
         miNodoPrecio.textContent = `$${producto.precio}`;
-        //Img
+        
         const miNodoImg = document.createElement('img');
         miNodoImg.classList.add('card-img');       
         miNodoImg.src = `${producto.img}`;
 
-        // Boton 
         const miNodoBoton = document.createElement('button');
         miNodoBoton.classList.add('btn', 'btn-success');
         miNodoBoton.textContent = 'Agregar al pedido';
         miNodoBoton.setAttribute('marcador', producto.id);
         miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
-        // Insertamos
+        
         miNodoCardBody.appendChild(miNodoTitle);
         miNodoCardBody.appendChild(miNodoPrecio);
         miNodoCardBody.appendChild(miNodoImg);
@@ -88,16 +87,13 @@ function renderizarProductos() {
     });
 }
 
-
 localStorage.setItem("listaProductosAlmacenados", JSON.stringify(listaProductos));
 
-
-function anyadirProductoAlCarrito(e) {
-    // Anyadimos el Nodo a nuestro carrito
+function anyadirProductoAlCarrito(e) {    
     carrito.push(e.target.getAttribute('marcador'))
-    // Actualizamos el carrito 
+    
     renderizarCarrito();
-    // Actualizamos el LocalStorage
+    
     guardarCarritoEnLocalStorage();
 }
 
@@ -118,13 +114,14 @@ function renderizarCarrito() {
         // Cuenta el número de veces que se repite el producto
         const numeroUnidadesItem = carrito.reduce((total, itemId) => {
             // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
-            return itemId === item ? total += 1 : total.sumarIva();
+            return itemId === item ? total += 1 : total;
         }, 0);
         // Creamos el nodo del item del carrito
         const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
         miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
-        // Boton de borrar
+        
+        // Boton de borra
         const miBoton = document.createElement('button');
         miBoton.classList.add('btn', 'btn-danger', 'mx-5');
         miBoton.textContent = 'X';
@@ -162,6 +159,7 @@ function calcularTotal() {
             return itemBaseDatos.id === parseInt(item);
         });
         // Los sumamos al total
+        
         return total + miItem[0].precio;
     }, 0).toFixed(2);
 }
