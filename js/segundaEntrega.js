@@ -100,7 +100,7 @@ function anyadirProductoAlCarrito(e) {
 function renderizarCarrito() {
     
     DOMcarrito.textContent = '';
-   
+    
     console.log(carrito)
     const carritoSinDuplicados = [...new Set(carrito)];
     
@@ -110,6 +110,7 @@ function renderizarCarrito() {
             
             
             return itemBaseDatos.id === parseInt(item);
+            
         });
         
         const numeroUnidadesItem = carrito.reduce((total, itemId) => {
@@ -117,7 +118,7 @@ function renderizarCarrito() {
             return itemId === item ? total += 1 : total;
             
         }, 0);
-        
+               
         const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
         
@@ -129,6 +130,7 @@ function renderizarCarrito() {
         miBoton.textContent = 'X';
         miBoton.style.marginLeft = '1rem';
         miBoton.dataset.item = item;
+        
         miBoton.addEventListener('click', borrarItemCarrito);
        
         miNodo.appendChild(miBoton);
@@ -137,7 +139,6 @@ function renderizarCarrito() {
     
     DOMtotal.textContent = calcularTotal();
 }
-
 
 function borrarItemCarrito(e) {
     
@@ -162,8 +163,9 @@ function calcularTotal() {
             return itemBaseDatos.id === parseInt(item);
         });
         
-        
-        return total + miItem[0].precio;
+        let precioConIva = (miItem[0].precio * 1.21);
+        console.log("Orden " + miItem[0].nombre + " $" + precioConIva)
+        return total + precioConIva;
         
     }, 0).toFixed(2);
 }
