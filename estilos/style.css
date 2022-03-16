@@ -1,66 +1,128 @@
-body{
+@media screen and (min-width: 600px) {
+  body {
     position: absolute;
     background-color: white;
-    
-}
-
-header{
+  }
+  header {
     background: black;
     height: 150px;
-}
-.carritofijo{
-    position: fixed;
+  }
+  #carritofijo {
+    position: fixed !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
-    
-
-
-}
-
-
-.letras{
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .letras {
     color: lightyellow;
     text-align: center;
-}
-
-.card{
-    flex-grow: 1;
+  }
+  .card {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin: 20px;
     max-width: 300px;
     border: 2px solid #333;
     padding: 10px 20px 10px 20px;
-    justify-content: center;
-    background: lightyellow !important; 
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: lightyellow !important;
     z-index: 99;
-    
-}
-.card:hover{
+  }
+  .card:hover {
     border-color: red;
-    box-shadow: 0px 0px 30px rgb(90, 6, 6);
-   
-    
-}
-
-#items{
-    justify-content: center;
-}
-
-.ordenar{
+    -webkit-box-shadow: 0px 0px 30px #5a0606;
+            box-shadow: 0px 0px 30px #5a0606;
+  }
+  #items {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ordenar {
     z-index: 99;
-    
-    
-}
-
-
-img{
+  }
+  img {
     width: 250px;
     height: 200px;
-    
+  }
+  .menuCatalogo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
-.menuCatalogo{
+@media screen and (max-width: 600px) {
+  body {
+    position: absolute;
+    background-color: #212529;
+  }
+  header {
+    background: black;
+    height: 200px;
+  }
+  #carritofijo {
+    position: absolute;
+    margin-top: 6580px;
+    background-color: #212529;
+  }
+  .letras {
+    color: lightyellow;
+    text-align: center;
+  }
+  .cell {
+    color: black;
+  }
+  .card {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin: 20px;
+    max-width: 300px;
+    border: 2px solid #333;
+    padding: 10px 20px 10px 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: lightyellow !important;
+    z-index: 99;
+  }
+  .card:hover {
+    border-color: red;
+    -webkit-box-shadow: 0px 0px 30px #5a0606;
+            box-shadow: 0px 0px 30px #5a0606;
+  }
+  #items {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ordenar {
+    z-index: 99;
+  }
+  img {
+    width: 250px;
+    height: 200px;
+  }
+  .menuCatalogo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
