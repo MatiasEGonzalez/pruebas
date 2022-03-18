@@ -74,7 +74,71 @@
   }
   #carritofijo {
     position: absolute;
-    margin-top: 6580px;
+    margin-top: 4100px;
+    background-color: #212529;
+  }
+  .letras {
+    color: lightyellow;
+    text-align: center;
+  }
+  .cell {
+    color: black;
+  }
+  .card {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin: 20px;
+    max-width: 300px;
+    border: 2px solid #333;
+    padding: 10px 20px 10px 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: lightyellow !important;
+    z-index: 99;
+  }
+  .card:hover {
+    border-color: red;
+    -webkit-box-shadow: 0px 0px 30px #5a0606;
+            box-shadow: 0px 0px 30px #5a0606;
+  }
+  #items {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ordenar {
+    z-index: 99;
+  }
+  img {
+    width: 250px;
+    height: 200px;
+  }
+  .menuCatalogo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  body {
+    position: absolute;
+    background-color: #212529;
+  }
+  header {
+    background: black;
+    height: 200px;
+  }
+  #carritofijo {
+    position: absolute;
+    margin-top: 6550px;
     background-color: #212529;
   }
   .letras {
